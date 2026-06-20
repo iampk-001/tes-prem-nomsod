@@ -6,13 +6,13 @@
 :root {
     --primary-color: #3498DB;
     --primary-dark: #2980B9;
-    --light-blue: #F0F7FD;
-    --white: #FFFFFF;
-    --text-dark: #333333;
-    --text-light: #666666;
+    --light-blue: #EEF4F8; /* Softer, muted light blue */
+    --white: #FCFBF9; /* Soft cream/off-white instead of harsh pure white */
+    --text-dark: #3A3A3A; /* Softer dark gray */
+    --text-light: #6D6D6D; /* Softer light gray */
     --border-radius: 16px;
     --transition: all 0.3s ease;
-    --box-shadow: 0 10px 30px rgba(52, 152, 219, 0.1);
+    --box-shadow: 0 10px 30px rgba(52, 152, 219, 0.06); /* Softer shadow */
 }
 
 * {
