@@ -100,4 +100,35 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load preferred language on start
     const savedLang = localStorage.getItem('preferredLanguage') || 'th';
     setLanguage(savedLang);
+
+    // --- Theme Switcher Logic ---
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    const html = document.documentElement;
+    
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeToggles.forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-sun"></i>';
+            });
+        } else {
+            html.removeAttribute('data-theme');
+            themeToggles.forEach(btn => {
+                btn.innerHTML = '<i class="fas fa-moon"></i>';
+            });
+        }
+        localStorage.setItem('preferredTheme', theme);
+    }
+    
+    // Load saved theme
+    const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+    setTheme(savedTheme);
+    
+    // Attach click events
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+    });
 });

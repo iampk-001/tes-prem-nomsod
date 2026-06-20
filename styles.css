@@ -8,11 +8,25 @@
     --primary-dark: #2980B9;
     --light-blue: #EEF4F8; /* Softer, muted light blue */
     --white: #FCFBF9; /* Soft cream/off-white instead of harsh pure white */
+    --card-bg: #FFFFFF;
+    --nav-bg: rgba(255, 255, 255, 0.95);
     --text-dark: #3A3A3A; /* Softer dark gray */
     --text-light: #6D6D6D; /* Softer light gray */
     --border-radius: 16px;
     --transition: all 0.3s ease;
     --box-shadow: 0 10px 30px rgba(52, 152, 219, 0.06); /* Softer shadow */
+}
+
+[data-theme="dark"] {
+    --primary-color: #5DADE2;
+    --primary-dark: #3498DB;
+    --light-blue: #1A252C;
+    --white: #121212;
+    --card-bg: #1E1E1E;
+    --nav-bg: rgba(18, 18, 18, 0.95);
+    --text-dark: #E0E0E0;
+    --text-light: #AAAAAA;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -138,7 +152,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--nav-bg);
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -227,7 +241,7 @@ section {
 .mobile-menu {
     display: none;
     flex-direction: column;
-    background-color: var(--white);
+    background-color: var(--card-bg);
     position: absolute;
     top: 100%;
     left: 0;
@@ -371,7 +385,7 @@ section {
 }
 
 .menu-card {
-    background-color: var(--white);
+    background-color: var(--card-bg);
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--box-shadow);
@@ -450,7 +464,7 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
-    background-color: var(--white);
+    background-color: var(--card-bg);
     border-radius: 24px;
     padding: 40px;
     box-shadow: var(--box-shadow);
@@ -637,6 +651,25 @@ section {
 .lang-divider {
     color: #ccc;
     font-size: 0.9rem;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 5px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    color: var(--primary-color);
 }
 
 .mobile-nav-controls {
